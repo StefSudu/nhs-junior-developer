@@ -1,0 +1,63 @@
+[
+    {
+      "technology": "Cloud Computing",
+      "role": "System Administrator",
+      "environment": "Cloud Infrastructure",
+      "scenario": "As a System Administrator working in a Cloud Infrastructure, you're alerted to a sudden spike in CPU usage across multiple VMs. You must diagnose whether it's caused by misconfigured autoscaling or a potential cryptomining attack."
+    },
+    {
+      "technology": "Cybersecurity",
+      "role": "Security Analyst",
+      "environment": "Enterprise Network",
+      "scenario": "As a Security Analyst within an Enterprise Network, you detect abnormal outbound traffic from a user workstation. You must investigate the potential data exfiltration and contain the threat before it spreads."
+    },
+    {
+      "technology": "DevOps",
+      "role": "Software Engineer",
+      "environment": "Cloud Infrastructure",
+      "scenario": "As a Software Engineer using DevOps principles in a Cloud Infrastructure environment, a new deployment breaks the CI/CD pipeline due to a misconfigured environment variable. You must resolve it before the nightly build."
+    },
+    {
+      "technology": "Cloud Computing",
+      "role": "System Administrator",
+      "environment": "On-Prem Data Center",
+      "scenario": "As a System Administrator in an On-Prem Data Center using Cloud Computing for backups, the backup synchronization fails for two critical servers. You're tasked with restoring replication and ensuring no data loss."
+    },
+    {
+      "technology": "Cybersecurity",
+      "role": "Security Analyst",
+      "environment": "Cloud Infrastructure",
+      "scenario": "As a Security Analyst responsible for Cloud Infrastructure security, you discover a public S3 bucket exposing sensitive configuration files. You must act quickly to secure the bucket and rotate affected secrets."
+    },
+    {
+      "technology": "DevOps",
+      "role": "Software Engineer",
+      "environment": "Enterprise Network",
+      "scenario": "As a Software Engineer following DevOps practices in an Enterprise Network, the deployment pipeline fails during artifact upload due to a proxy misconfiguration. You must troubleshoot and adjust the network policies."
+    },
+    {
+      "technology": "Cloud Computing",
+      "role": "Software Engineer",
+      "environment": "Cloud Infrastructure",
+      "scenario": "As a Software Engineer developing cloud-native apps in a Cloud Infrastructure, you're assigned to optimize a serverless function that’s timing out under high load. You must profile it and reduce execution time."
+    },
+    {
+      "technology": "Cybersecurity",
+      "role": "System Administrator",
+      "environment": "On-Prem Data Center",
+      "scenario": "As a System Administrator maintaining an On-Prem Data Center, you find that outdated antivirus definitions failed to detect a malware infection. You must isolate the system and initiate a forensic investigation."
+    },
+    {
+      "technology": "DevOps",
+      "role": "Security Analyst",
+      "environment": "Enterprise Network",
+      "scenario": "As a Security Analyst supporting DevOps teams in an Enterprise Network, a misconfigured Jenkins job grants excessive permissions to staging resources. You must audit access controls and implement least privilege."
+    },
+    {
+      "technology": "Cloud Computing",
+      "role": "System Administrator",
+      "environment": "Enterprise Network",
+      "scenario": "As a System Administrator transitioning an Enterprise Network to Cloud Computing, you face connectivity issues between legacy VPN clients and new cloud-based services. You need to implement a hybrid network fix."
+    }
+]
+  
