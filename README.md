@@ -3,7 +3,7 @@
 # Instructions to setup project locally
 1. Run npm install
 2. Create .env.local file and add the JWT_SECRET (provided over email)
-3. Copy credentials.json into the database folder
+3. Copy credentials.json into the database folder (provided over email)
 3. Please verify 'client_id' and 'client_secret' are included on the 'Generate token' request in postman (I will provide the creds over email as well)
 4. Run 'npm run dev'
 5. Send requests through postman
