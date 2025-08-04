@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { sendSuccessResponseWithData, sendUnauthorisedError, sendNotFoundError } from "../helpers/ApiResponses";
 
-const clients = require('../database/credentials.json');
 const jwt = require('jsonwebtoken'); 
 
 function generateAccessToken(req: Request, res: Response) {
     const clientId = req.body.client_id;
     const clientSecret = req.body.client_secret;
+    const nhsClient = process.env.NHS_CLIENT;
 
-    if (!clients[clientId]) {
+    if (!nhsClient) {
         return sendNotFoundError("Client not found", res);
-    } else if (clients[clientId] == clientSecret) {
+    } else if (nhsClient == clientSecret) {
         // generate jwt token
         const token = jwt.sign({ clientId }, process.env.JWT_SECRET, {
             expiresIn: '5m',
