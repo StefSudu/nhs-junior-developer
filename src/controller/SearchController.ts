@@ -17,7 +17,6 @@ function search(req: Request, res: Response): Response<any, Record<string, any>>
 
         data.forEach((item) => {
             const scenario = new ScenarioModel(item.technology, item.role, item.environment, item.scenario)
-
             if (scenario.matches(tech, role, environment)) {
                 bestResults.push(scenario);
             } else {
