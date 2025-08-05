@@ -17,4 +17,3 @@ app.listen(port);
 app.use('/auth', authRouter);
 
 app.use('/user', authenticateToken, searchRouter);
-

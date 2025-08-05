@@ -1,14 +1,8 @@
 import { Request, Response } from "express";
+import ScenarioModel from "../common/models/Scenario";
 import { sendSuccessResponse, sendSuccessResponseWithData, sendErrorResponse } from "../helpers/ApiResponses";
 
-interface Scenario {
-    technology: string;
-    role: string;
-    environment: string;
-    scenario: string;
-}
-
-const data: Scenario[] = require('../database/data.json');
+const data: ScenarioModel[] = require('../database/data.json');
 
 function search(req: Request, res: Response): Response<any, Record<string, any>> {
     try {
@@ -18,18 +12,16 @@ function search(req: Request, res: Response): Response<any, Record<string, any>>
         const environment = (req.body.environment || "").toLowerCase();
 
         //get initial results
-        const bestResults: Scenario[] = [];
-        const worstResults: Scenario[] = [];
+        const bestResults: ScenarioModel[] = [];
+        const worstResults: ScenarioModel[] = [];
 
-        data.forEach((item: Scenario) => {
-            if (item.technology.toLowerCase() === tech && item.role.toLowerCase() === role && item.environment.toLowerCase() === environment) {
-                bestResults.push(item);
-            } else if (
-                item.technology.toLowerCase() === tech ||
-                item.role.toLowerCase() === role ||
-                item.environment.toLowerCase() === environment
-            ) {
-                worstResults.push(item);
+        data.forEach((item) => {
+            const scenario = new ScenarioModel(item.technology, item.role, item.environment, item.scenario)
+
+            if (scenario.matches(tech, role, environment)) {
+                bestResults.push(scenario);
+            } else {
+                worstResults.push(scenario);
             }
         });
         return getRandomScenario(bestResults, worstResults, res, req);
@@ -38,7 +30,7 @@ function search(req: Request, res: Response): Response<any, Record<string, any>>
     }
 }
 
-function getRandomScenario(bestResults: Scenario[], worstResults: Scenario[], res: Response, req: Request): Response<any, Record<string, any>> {
+function getRandomScenario(bestResults: ScenarioModel[], worstResults: ScenarioModel[], res: Response, req: Request): Response<any, Record<string, any>> {
     if (bestResults.length == 0 && worstResults.length == 0) {
         return sendSuccessResponseWithData(res, 'No scenario found', [req.body.technology, req.body.role, req.body.environment]);
     }
